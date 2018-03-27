@@ -1,3 +1,4 @@
+//written for Arduino NANO by praveen kumar
 #include <SoftwareSerial.h>                                       //hedder file for software serial
 #include <TinyGPS++.h>                                            //for gps(conversion of NMEA format to understandable)
 #include <MQ2.h>                                                  //for smoke sensor
