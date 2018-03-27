@@ -40,15 +40,9 @@ void loop()
   COO="\nCO="+CO+"ppm"; 
   SMKK="\nsmoke="+SMK+"ppm";
   cell = cel+"'C";
-  //Serial.println(SMKK);
- Serial.println(cel);
-  //Serial.println(LPGG);
-  //Serial.println(COO);
-  //Serial.println(li);
-  //SendMessage();
-  //if(li<500.0)SendMessage();
-  if(celcius>=32.0)SendMessage();
-  //if(co>100.0)SendMessage1();
+  if(li<50.0)SendMessage1();
+  if(celcius>=32.0)SendMessage1();
+  if(co>100.0)SendMessage1();
   while(gpsSerial.available() > 0) 
   gps.encode(gpsSerial.read()); 
   if (gps.location.isUpdated())
@@ -120,8 +114,7 @@ void SendMessage1()
 {
   Serial.println("AT+CMGF=1");    
   delay(1000);  
-  sendd=String("AT+CMGS=\"+918106005725")+String("\"\r"); 
-  Serial.println(sendd);
+  sendd=String("AT+CMGS=\"+91**********")+String("\"\r"); 
   delay(1000);
   Serial.println("ALERT: ");
   Serial.println(stringThree);
